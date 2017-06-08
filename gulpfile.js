@@ -21,7 +21,7 @@ var banner = ['/*!\n',
 
 gulp.task('clean-start', function() {
   return del([
-      'docs/*'
+      'assets/*'
     ]);
 });
 
@@ -29,7 +29,7 @@ gulp.task('minify-css', ['clean-start'], function() {
     return gulp.src('css/*.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('docs'))
+        .pipe(gulp.dest('assets'))
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -41,7 +41,7 @@ gulp.task('minify-js', ['clean-start'], function() {
         .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('docs'))
+        .pipe(gulp.dest('assets'))
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -51,12 +51,12 @@ gulp.task('bundle', ['minify-js', 'minify-css'], function() {
   return gulp.src('./bundle.config.js')
     .pipe(bundle())
     .pipe(bundle.results('./')) // arg is destination of bundle.result.json
-    .pipe(gulp.dest('./docs'));
+    .pipe(gulp.dest('./assets'));
 });
 
 gulp.task('clean-end', ['bundle'], function() {
   return del([
-      'docs/*min*'
+      'assets/*min*'
     ]);
 });
 
@@ -75,7 +75,7 @@ gulp.task('copy', function() {
             '!node_modules/font-awesome/*.txt',
             '!node_modules/font-awesome/*.md',
             '!node_modules/font-awesome/*.json'
-        ])  
+        ])
         .pipe(gulp.dest('vendor/font-awesome'))
 })
 
