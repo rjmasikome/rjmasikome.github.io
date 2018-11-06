@@ -1,12 +1,12 @@
 {
-  "name": "startbootstrap-grayscale",
-  "title": "Grayscale",
-  "version": "3.3.7+1",
-  "homepage": "http://startbootstrap.com/template-overviews/grayscale",
-  "author": "Start Bootstrap",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+  "name": "rjmasikome.github.io",
+  "title": "RJ Masikome",
+  "version": "0.0.2",
+  "author": "RJ Masikome",
+  "license": "MIT",
+  "scripts": {
+    "start": "http-server .",
+    "build": "gulp"
   },
   "devDependencies": {
     "bootstrap": "^3.3.7",
@@ -17,9 +17,11 @@
     "gulp-bundle-assets": "^2.28.0",
     "gulp-clean-css": "^2.0.10",
     "gulp-header": "^1.8.7",
+    "gulp-inject": "^4.3.2",
     "gulp-less": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.4",
+    "http-server": "^0.11.1",
     "jquery": "^1.11.3"
   },
   "repository": {
